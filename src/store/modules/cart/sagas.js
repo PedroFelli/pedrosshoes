@@ -48,7 +48,7 @@ function* updateAmount({ id, amount }) {
   const stockAmount = stock.data.amount;
 
   if (amount > stockAmount) {
-    toast.error('Quantidade solicitada fora de estoque');
+    toast.error('Quantidade solicitada fora de estoque!');
     return;
   }
 
@@ -57,5 +57,5 @@ function* updateAmount({ id, amount }) {
 
 export default all([
   takeLatest('@cart/ADD_REQUEST', addToCart),
-  takeLatest('@cart/UPDATE_AMOUNT_SUCCESST', updateAmount),
+  takeLatest('@cart/UPDATE_AMOUNT_REQUEST', updateAmount),
 ]);
